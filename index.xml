@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>BG2BKK Site</title>
-    <link>https://bg2bkk.github.io/index.xml</link>
-    <description>Recent content on BG2BKK Site</description>
+    <title>MarsDoge Site</title>
+    <link>https://MarsDoge.github.io/index.xml</link>
+    <description>Recent content on MarsDoge Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Sun, 23 Oct 2016 16:43:44 +0800</lastBuildDate>
-    <atom:link href="https://bg2bkk.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://MarsDoge.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>怎样尽可能全面的评估一台服务器的性能</title>
-      <link>https://bg2bkk.github.io/post/how%20to%20perform%20server%20performance%20evaluation/</link>
+      <link>https://MarsDoge.github.io/post/how%20to%20perform%20server%20performance%20evaluation/</link>
       <pubDate>Sun, 23 Oct 2016 16:43:44 +0800</pubDate>
       
-      <guid>https://bg2bkk.github.io/post/how%20to%20perform%20server%20performance%20evaluation/</guid>
+      <guid>https://MarsDoge.github.io/post/how%20to%20perform%20server%20performance%20evaluation/</guid>
       <description>
 
 &lt;p&gt;给你一台服务器，怎样能够全面评估它的性能？需要测试哪些指标？请写出每个指标的具体测试原理和测试代码。假设这台服务器完全处于线下。&lt;/p&gt;
@@ -28,7 +28,7 @@
 &lt;li&gt;如何进行压测，实现测试场景，压测工具/压测代码&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;bench可以分类为macro bench和micro bench;对于macro bench，很多时候我们得到的是一个整体而粗略的结果，通过top我们可以看到系统负载，这些对于我们定位线上问题，分析应用程序的性能热点很有帮助，然而这并不能精确衡量一台Linux Server的性能；应用程序多种多样，线上系统目的各不相同，所以macro bench一般用于case by case的性能分析，&lt;a href=&#34;https://github.com/BG2BKK/githubio/blob/master/content/post/macrobench.md&#34;&gt;用于解决应用的性能瓶颈&lt;/a&gt;；而micro bench可以定量的分析一台机器+操作系统的性能，采用相同的测试基准，通过无干扰的大量重复基本操作，比如从L1 Cache读取单个字节，耗时一个CPU时钟，在大量重复中得到较为宏观的结果，再排除loop损耗、取运行时间的损耗，可以用于基本衡量一台server的运行效率。&lt;/p&gt;
+&lt;p&gt;bench可以分类为macro bench和micro bench;对于macro bench，很多时候我们得到的是一个整体而粗略的结果，通过top我们可以看到系统负载，这些对于我们定位线上问题，分析应用程序的性能热点很有帮助，然而这并不能精确衡量一台Linux Server的性能；应用程序多种多样，线上系统目的各不相同，所以macro bench一般用于case by case的性能分析，&lt;a href=&#34;https://github.com/MarsDoge/githubio/blob/master/content/post/macrobench.md&#34;&gt;用于解决应用的性能瓶颈&lt;/a&gt;；而micro bench可以定量的分析一台机器+操作系统的性能，采用相同的测试基准，通过无干扰的大量重复基本操作，比如从L1 Cache读取单个字节，耗时一个CPU时钟，在大量重复中得到较为宏观的结果，再排除loop损耗、取运行时间的损耗，可以用于基本衡量一台server的运行效率。&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;./bin/x86_64-linux-gnu/enough
 
@@ -230,11 +230,11 @@ TEN(T)表示循环展开执行10次任务T，可使loop开销对单次执行结�
 &lt;li&gt;测量结果
 
 &lt;ul&gt;
-&lt;li&gt;测量结果如下图所示，&lt;a href=&#34;https://raw.githubusercontent.com/BG2BKK/githubio/master/static/lat_mem_latency.png&#34;&gt;原图见&lt;/a&gt;，原始数据&lt;a href=&#34;https://github.com/BG2BKK/githubio/blob/master/static/data.set&#34;&gt;见文件&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;测量结果如下图所示，&lt;a href=&#34;https://raw.githubusercontent.com/MarsDoge/githubio/master/static/lat_mem_latency.png&#34;&gt;原图见&lt;/a&gt;，原始数据&lt;a href=&#34;https://github.com/MarsDoge/githubio/blob/master/static/data.set&#34;&gt;见文件&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;https://raw.githubusercontent.com/BG2BKK/githubio/master/static/lat_mem_latency.png&#34; &gt;&lt;p&gt;多级内存的读写速度，从L1、L2、L3到主存&lt;/p&gt;&lt;/div&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;https://raw.githubusercontent.com/MarsDoge/githubio/master/static/lat_mem_latency.png&#34; &gt;&lt;p&gt;多级内存的读写速度，从L1、L2、L3到主存&lt;/p&gt;&lt;/div&gt;
 
 &lt;pre&gt;&lt;code&gt;图例：
     横轴读取的内存块大小，从4KB到8MB，横轴以0.5MB为单位
@@ -517,10 +517,10 @@ Remote Dram ~100 ns
     
     <item>
       <title>Understanding TCPIP Network Stack &amp; Writing Network Apps</title>
-      <link>https://bg2bkk.github.io/post/Understanding%20TCPIP%20Network%20Stack%20&amp;%20Writing%20Network%20Apps/</link>
+      <link>https://MarsDoge.github.io/post/Understanding%20TCPIP%20Network%20Stack%20&amp;%20Writing%20Network%20Apps/</link>
       <pubDate>Thu, 20 Oct 2016 22:21:55 +0800</pubDate>
       
-      <guid>https://bg2bkk.github.io/post/Understanding%20TCPIP%20Network%20Stack%20&amp;%20Writing%20Network%20Apps/</guid>
+      <guid>https://MarsDoge.github.io/post/Understanding%20TCPIP%20Network%20Stack%20&amp;%20Writing%20Network%20Apps/</guid>
       <description>
 
 &lt;h1 id=&#34;理解tcp-ip协议栈-实现网络应用&#34;&gt;理解TCP/IP协议栈 实现网络应用&lt;/h1&gt;
@@ -579,7 +579,7 @@ Remote Dram ~100 ns
 
 &lt;p&gt;如下图所示，一个网络栈有很多层，图中包含各层类型。&lt;/p&gt;
 
-&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;https://raw.githubusercontent.com/BG2BKK/githubio/master/static/operation_process_by_each_layer_of_tcp_ip.png&#34; width=&#34;70%&#34; height=&#34;70%&#34;&gt;&lt;p&gt;Figure 1: Operation Process by Each Layer of TCP/IP Network Stack for Data Transmission.&lt;/p&gt;&lt;/div&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;https://raw.githubusercontent.com/MarsDoge/githubio/master/static/operation_process_by_each_layer_of_tcp_ip.png&#34; width=&#34;70%&#34; height=&#34;70%&#34;&gt;&lt;p&gt;Figure 1: Operation Process by Each Layer of TCP/IP Network Stack for Data Transmission.&lt;/p&gt;&lt;/div&gt;
 
 &lt;p&gt;图中虽然有多层，但可以简要分为3类：&lt;/p&gt;
 
@@ -610,7 +610,7 @@ Remote Dram ~100 ns
 
 &lt;p&gt;下图是一个TCP报文，包括两个TCP片段：TCP header和Payload，如图2所示&lt;/p&gt;
 
-&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;https://raw.githubusercontent.com/BG2BKK/githubio/master/static/tcp_frame_structure.png&#34; width=&#34;70%&#34; height=&#34;70%&#34;&gt;&lt;p&gt;Figure 2: TCP Frame Structure .&lt;/p&gt;&lt;/div&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;https://raw.githubusercontent.com/MarsDoge/githubio/master/static/tcp_frame_structure.png&#34; width=&#34;70%&#34; height=&#34;70%&#34;&gt;&lt;p&gt;Figure 2: TCP Frame Structure .&lt;/p&gt;&lt;/div&gt;
 
 &lt;p&gt;payload部分是待发送的数据，处于socket的未确认(unACK)发送缓冲区，每个包的payload的最大长度由对方接收窗口大小、拥塞窗口大小和maximum segment size（MSS，最大报文长度）共同决定。&lt;/p&gt;
 
@@ -634,7 +634,7 @@ Remote Dram ~100 ns
 
 &lt;p&gt;现在我们看看数据的接收流程，当数据包到来的时候，网络栈是如何处理的，如图3所示。&lt;/p&gt;
 
-&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;https://raw.githubusercontent.com/BG2BKK/githubio/master/static/operation_process_by_each_layer_of_tcp_ip_for_data_received.png&#34; width=&#34;70%&#34; height=&#34;70%&#34;&gt;&lt;p&gt;Figure 3: Operation Process by Each Layer of TCP/IP Network Stack for Handling Data Received.&lt;/p&gt;&lt;/div&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;https://raw.githubusercontent.com/MarsDoge/githubio/master/static/operation_process_by_each_layer_of_tcp_ip_for_data_received.png&#34; width=&#34;70%&#34; height=&#34;70%&#34;&gt;&lt;p&gt;Figure 3: Operation Process by Each Layer of TCP/IP Network Stack for Handling Data Received.&lt;/p&gt;&lt;/div&gt;
 
 &lt;p&gt;首先，NIC将数据包写入自身内存，检查该包是否CRC合法，然后将该包发送给host的内存，host的内存是NIC驱动事先向kernel申请的内存，用于接收数据包，当host分配成功，通过NIC驱动告诉NIC这块内存的地址和大小。如果NIC driver没有实现分配好内存，NIC收到数据包后会直接丢弃。&lt;/p&gt;
 
@@ -682,7 +682,7 @@ Remote Dram ~100 ns
 
 &lt;p&gt;现在我们可以从更细节的角度观察linux网络栈的内部流程。就像其他非网络栈的子系统，linux的网络站以事件驱动的方式，当网络事件发生时进行相应处理，也就是说网络栈内只有一个进程或者控制流处理运行（其实就是kernel）。上文的图1和图3表示数据包的简化版控制流，图4将显示更多细节。&lt;/p&gt;
 
-&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;https://raw.githubusercontent.com/BG2BKK/githubio/master/static/control_flow_in_stack.png&#34; width=&#34;70%&#34; height=&#34;70%&#34;&gt;&lt;p&gt;Figure 4: Control Flow in the Stack.&lt;/p&gt;&lt;/div&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;https://raw.githubusercontent.com/MarsDoge/githubio/master/static/control_flow_in_stack.png&#34; width=&#34;70%&#34; height=&#34;70%&#34;&gt;&lt;p&gt;Figure 4: Control Flow in the Stack.&lt;/p&gt;&lt;/div&gt;
 
 &lt;p&gt;图4的控制流(1)中，应用程序通过系统调用比如read()和write()调用TCP/IP协议栈，在这里没有数据包的发送，需要经过协议栈传输。控制流(2)与控制流(1)的不同之处在于，它要求调用TCP后直接发送数据包，参考&lt;a href=&#34;http://blog.chinaunix.net/uid-23069658-id-3280895.html&#34;&gt;raw socket&lt;/a&gt;的&lt;a href=&#34;http://abcdxyzk.github.io/blog/2015/04/14/kernel-net-sock-raw/&#34;&gt;用法&lt;/a&gt;。它创造一个数据包然后将该包发送到NIC驱动前的一个队列中，然后队列的实现方式决定何时将该包发送给NIC驱动。这其实就是linux中的队列方式(queue discipline, qdisc)，linux的流量控制功能就是操作这个队列实现的，默认的操作方式是FIFO，先进先出。通过使用其他队列控制方式，linux可以实现多种效果，比如人工控制丢包、包延迟和流量限制等等功能&lt;del&gt;待查：同一个队列的不同控制方式discipline，还是多个队列&lt;/del&gt;。在控制流(1)和(2)中，应用程序的处理流程最终将调用NIC驱动。&lt;/p&gt;
 
@@ -702,7 +702,7 @@ Remote Dram ~100 ns
 
 &lt;p&gt;中断处理是复杂的，毕竟你需要理解与接受数据包有关的各个环节。图5显示了中断处理流程图。&lt;/p&gt;
 
-&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;https://raw.githubusercontent.com/BG2BKK/githubio/master/static/processing_interrupt_softirq_and_received_packet.png&#34; width=&#34;70%&#34; height=&#34;70%&#34;&gt;&lt;p&gt;Figure 5: Processing Interrupt, softirq, and Received Packet.&lt;/p&gt;&lt;/div&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;https://raw.githubusercontent.com/MarsDoge/githubio/master/static/processing_interrupt_softirq_and_received_packet.png&#34; width=&#34;70%&#34; height=&#34;70%&#34;&gt;&lt;p&gt;Figure 5: Processing Interrupt, softirq, and Received Packet.&lt;/p&gt;&lt;/div&gt;
 
 &lt;p&gt;想象下CPU 0正在执行应用程序，这个时候NIC收到一个数据包，向CPU 0产生一个中断。然后CPU执行内核中断处理程序。内核通过中断号调用中断处理程序，响应NIC驱动，然后NIC驱动释放已发送完成的数据包，然后调用napi_schedule()函数去准备接受数据包，该函数请求软中断并返回，此时NIC驱动的中断处理程序结束，控制权交回内核软中断处理程序。硬中断上下文执行完成后，软中断开始执行（这里是内核的tasklet或者work_queue了吧，处于中断上下文的话，只能是tasklet，涉及到阻塞方法，比如与NIC设备的通信，就需要wait_queue了），软硬中断上下文都是由同一个进程执行的（linux kernel）。不过，软硬中断的执行栈不一样，硬中断将会屏蔽硬件中断，软中断执行期间是不屏蔽的（老生常谈）。&lt;/p&gt;
 
@@ -720,7 +720,7 @@ Remote Dram ~100 ns
 
 &lt;p&gt;首先，sk_buff结构体或者skb结构体表示一个数据包，图6表示sk_buff结构体的主要部分。虽然sk_buff的功能越来越丰富，也越来越复杂，但图6足以说明sk_buff相关的通用方法。&lt;/p&gt;
 
-&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;https://raw.githubusercontent.com/BG2BKK/githubio/master/static/packet_structure_sk_buff.png&#34; width=&#34;70%&#34; height=&#34;70%&#34;&gt;&lt;p&gt;Figure 6: Packet Structure sk_buff.&lt;/p&gt;&lt;/div&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;https://raw.githubusercontent.com/MarsDoge/githubio/master/static/packet_structure_sk_buff.png&#34; width=&#34;70%&#34; height=&#34;70%&#34;&gt;&lt;p&gt;Figure 6: Packet Structure sk_buff.&lt;/p&gt;&lt;/div&gt;
 
 &lt;h3 id=&#34;sk-buff包括数据包的data部分和元数据部分&#34;&gt;sk_buff包括数据包的Data部分和元数据部分&lt;/h3&gt;
 
@@ -744,7 +744,7 @@ Remote Dram ~100 ns
 
 &lt;p&gt;第二，需要有一个结构体来表示一条TCP连接。此前，它被笼统的称为TCP控制块。Linux使用tcp_sock结构体表示TCP Control Block，如图7所示，你可以看到socket、tcp_socket和struct file之间的关系。&lt;/p&gt;
 
-&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;https://raw.githubusercontent.com/BG2BKK/githubio/master/static/tcp_connection_structure.png&#34; width=&#34;70%&#34; height=&#34;70%&#34;&gt;&lt;p&gt;Figure 7: TCP Connection Structure.&lt;/p&gt;&lt;/div&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;https://raw.githubusercontent.com/MarsDoge/githubio/master/static/tcp_connection_structure.png&#34; width=&#34;70%&#34; height=&#34;70%&#34;&gt;&lt;p&gt;Figure 7: TCP Connection Structure.&lt;/p&gt;&lt;/div&gt;
 
 &lt;p&gt;当一个系统调用执行时，首先搜索进程的fd对应的struct file结构，对于类Uinx操作系统来说，一个socket、一个文件或者一个设备对于普通文件系统来说都抽象成struct file结构。因此，文件系统包括了基本信息，对于一个socket结构体来说，struct socket包含了与socket相关的信息，以及一个file指针，该socket结构体&lt;a href=&#34;http://lxr.free-electrons.com/source/include/linux/tcp.h&#34;&gt;同样有一个struct sock类型的指针sk成员，struct sock可强制类型转换到struct tcp_sock（参考tcp_sk函数）&lt;/a&gt;。&lt;/p&gt;
 
@@ -1098,7 +1098,7 @@ int dev_hard_start_xmit(struct sk_buff *skb, struct net_device *dev, ...)
 
 &lt;p&gt;如图8所示的包发送流程图，我们可以看到ring是怎样工作的。&lt;/p&gt;
 
-&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;https://raw.githubusercontent.com/BG2BKK/githubio/master/static/driver_nic_communication_how_to_transmit_packet.png&#34; width=&#34;70%&#34; height=&#34;70%&#34;&gt;&lt;p&gt;Figure 8: Driver-NIC Communication: How to Transmit Packet.&lt;/p&gt;&lt;/div&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;https://raw.githubusercontent.com/MarsDoge/githubio/master/static/driver_nic_communication_how_to_transmit_packet.png&#34; width=&#34;70%&#34; height=&#34;70%&#34;&gt;&lt;p&gt;Figure 8: Driver-NIC Communication: How to Transmit Packet.&lt;/p&gt;&lt;/div&gt;
 
 &lt;p&gt;NIC驱动收到上层发来的数据包后，创建NIC可以理解的发送描述符(send descriptor)，发送描述符包括包大小、物理地址等信息；NIC要求通过物理地址访问NIC驱动的内存，所以NIC驱动需要将包的虚拟地址转换为物理地址。然后NIC驱动将send descriptor加入到发送环状缓冲(Send TX Ring Buffer)，如图8的流程(1)所示。&lt;/p&gt;
 
@@ -1109,7 +1109,7 @@ PCIE驱动就知道，将PCIE设备的配置寄存器映射到Host的内存空�
 
 &lt;p&gt;如图9所示，我们可以看到读取数据包流程图.&lt;/p&gt;
 
-&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;https://raw.githubusercontent.com/BG2BKK/githubio/master/static/driver_nic_cmomunication_how_to_receive_packets.png&#34; width=&#34;70%&#34; height=&#34;70%&#34;&gt;&lt;p&gt;Figure 9: Driver-NIC Communication: How to Receive Packets.&lt;/p&gt;&lt;/div&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;https://raw.githubusercontent.com/MarsDoge/githubio/master/static/driver_nic_cmomunication_how_to_receive_packets.png&#34; width=&#34;70%&#34; height=&#34;70%&#34;&gt;&lt;p&gt;Figure 9: Driver-NIC Communication: How to Receive Packets.&lt;/p&gt;&lt;/div&gt;
 
 &lt;p&gt;首先，NIC驱动在host分配用于存储接收数据包和接收描述符的内存。接收描述符包括缓冲区大小和物理地址，与发送描述符一样都是物理地址，用于DMA传输。然后，NIC驱动将接收描述符添加到RX ring中(流程1)。通过PIO，NIC驱动将新的接收描述符地址写入NIC中(流程2)，NIC从Rx ring中以DMA方式获取接收描述符，获得用于接收数据包的缓冲区的大小和物理地址并存储(流程3)。&lt;/p&gt;
 
@@ -1121,7 +1121,7 @@ PCIE驱动就知道，将PCIE设备的配置寄存器映射到Host的内存空�
 
 &lt;p&gt;流控制是网络栈各层通力合作实现的。图10显示发送数据时网络栈的各级缓存。首先，应用程序创建数据，添加到socket发送缓存中，如果缓存没有内存可用，则send/write系统调用返回失败或者堵塞。因此，应用程序流向kernel的数据流速由socket缓冲区大小来限制。&lt;/p&gt;
 
-&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;https://raw.githubusercontent.com/BG2BKK/githubio/master/static/buffers_related_to_packet_transmission.png&#34; width=&#34;70%&#34; height=&#34;70%&#34;&gt;&lt;p&gt;Figure 10: Buffers Related to Packet Transmission.&lt;/p&gt;&lt;/div&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;https://raw.githubusercontent.com/MarsDoge/githubio/master/static/buffers_related_to_packet_transmission.png&#34; width=&#34;70%&#34; height=&#34;70%&#34;&gt;&lt;p&gt;Figure 10: Buffers Related to Packet Transmission.&lt;/p&gt;&lt;/div&gt;
 
 &lt;p&gt;TCP协议栈创建和发送数据包，通过发送队列transmit queue(qdisc)向NIC驱动发送。这是个典型的FIFO队列，队列长度可以由ifconfig工具配置，执行ifconfig工具结果中的txqueuelen的值，一般为1000，意味着缓存1000个数据包。&lt;/p&gt;
 
@@ -1133,7 +1133,7 @@ PCIE驱动就知道，将PCIE设备的配置寄存器映射到Host的内存空�
 
 &lt;p&gt;图11显示接受数据包的传递过程。首先，收到的数据包将缓存在NIC自身缓存中。从流控制的角度来看，NIC和NIC驱动之间的Rx ring队列作为缓存，NIC驱动从Rx ring中将已接受数据包的请求取出，发给上层，在这里NIC驱动和协议栈之前没有缓冲区，因为这里是通过kernel调用NAPI去poll已收到的数据包的。(需要想想怎么翻译).这里可以认为上层直接从Rx ring中获取数据包。网络包的数据部分将上传缓存在socket的接收缓冲区中，应用程序随后从socket的接受缓冲区中读取数据。&lt;/p&gt;
 
-&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;https://raw.githubusercontent.com/BG2BKK/githubio/master/static/buffers_related_to_packaet_receiving.png&#34; width=&#34;70%&#34; height=&#34;70%&#34;&gt;&lt;p&gt;Figure 11: Buffers Related to Packet Receiving.&lt;/p&gt;&lt;/div&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;https://raw.githubusercontent.com/MarsDoge/githubio/master/static/buffers_related_to_packaet_receiving.png&#34; width=&#34;70%&#34; height=&#34;70%&#34;&gt;&lt;p&gt;Figure 11: Buffers Related to Packet Receiving.&lt;/p&gt;&lt;/div&gt;
 
 &lt;h2 id=&#34;to-be-continued&#34;&gt;To Be Continued&lt;/h2&gt;
 
@@ -1143,10 +1143,10 @@ PCIE驱动就知道，将PCIE设备的配置寄存器映射到Host的内存空�
     
     <item>
       <title>futex和linux的线程同步机制</title>
-      <link>https://bg2bkk.github.io/post/futex%E5%92%8Clinux%E7%9A%84%E7%BA%BF%E7%A8%8B%E5%90%8C%E6%AD%A5%E6%9C%BA%E5%88%B6/</link>
+      <link>https://MarsDoge.github.io/post/futex%E5%92%8Clinux%E7%9A%84%E7%BA%BF%E7%A8%8B%E5%90%8C%E6%AD%A5%E6%9C%BA%E5%88%B6/</link>
       <pubDate>Thu, 13 Oct 2016 13:57:31 +0800</pubDate>
       
-      <guid>https://bg2bkk.github.io/post/futex%E5%92%8Clinux%E7%9A%84%E7%BA%BF%E7%A8%8B%E5%90%8C%E6%AD%A5%E6%9C%BA%E5%88%B6/</guid>
+      <guid>https://MarsDoge.github.io/post/futex%E5%92%8Clinux%E7%9A%84%E7%BA%BF%E7%A8%8B%E5%90%8C%E6%AD%A5%E6%9C%BA%E5%88%B6/</guid>
       <description>&lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;http://blog.csdn.net/nellson/article/details/5400360#&#34;&gt;futex初体验&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://blog.sina.com.cn/s/blog_e59371cc0102v29b.html&#34;&gt;阿里基础架构事业群的博客关于futex的文章&lt;/a&gt;&lt;/li&gt;
@@ -1192,10 +1192,10 @@ futex(0x7f99372d3004, FUTEX_WAIT, 0, NULL) = -1 EAGAIN (Resource temporarily una
     
     <item>
       <title>为什么我喜欢读书</title>
-      <link>https://bg2bkk.github.io/post/why_to_read/</link>
+      <link>https://MarsDoge.github.io/post/why_to_read/</link>
       <pubDate>Sun, 18 Sep 2016 19:43:59 +0800</pubDate>
       
-      <guid>https://bg2bkk.github.io/post/why_to_read/</guid>
+      <guid>https://MarsDoge.github.io/post/why_to_read/</guid>
       <description>&lt;p&gt;我们都知道实验新药的时候首先要在实验大鼠身上实行，有些时候我们发现，明明在大鼠身上具有良好功效的药品，在人身上的临床效果并不明显。我们此时可能会从鼠和人类的基因的区别、体质等方面找原因，这是受过基本科研训练的人会有的正常想法：控制变量法。其实我们可能忽略了一个点，那就是，实验大鼠从小生活在无菌环境下，而人并不是。实验大鼠在无菌环境下出生和长大，并不会遇到某些细菌，自然不会建立起免疫机制，可与之类比的大概是人类婴儿吧。科学家们通过对比实验大鼠和农场中生活的野鼠，确认野鼠体质与成年人类更为接近，因此在实验新药的时候会更倾向于使用农场大鼠。这个案例告诉我们，遇到问题时，我们一般会从受到过的训练中获取方法，快速反应去比对变量，但同时眼睛将固定于自己更想看到的部分，而没有跳出来看问题。在分析系统性能问题时，对某个瓶颈点百思不得其解时，这个时候是否可以把自己跳出来，多想想其他变量，甚至是其他更显得“弱智”的因素。&lt;/p&gt;
 
 &lt;p&gt;有时候阅读一些技术文章时，会有这样一种感觉：这和理论不太一样啊。读林佩满的wireshark的书时，他分析过这样一个问题：某厂某个文件传输的产品在竞标时，发现大文件通过网络传输，从上海发往北京时很慢，需要很长时间才能将文件发送完成，而同时测试网速发现完全不是瓶颈，带宽利用率低到个位数；林在通过wireshark抓包时，发现有非常多的数据包被重传了多次，并且是毫无意义的重传；配管人员配置数据传送采用UDP方式，理论上讲不需要三次握手，且不需要发送确认的UDP传输更适合发送大文件，比如FTP协议就是基于UDP实现的，课本上都这么说。然而实际情况是，发送数据从上海到北京，会经过多多少少的中间结点，客户端发送较大的数据包，中途转发时，一些设备可能将大包拆成小包发送，对于UDP协议而言，如果最终小包里有一个包传输失败，那么需要将整个大包重传，而对于TCP协议而言，哪个小包没有收到，由于TCP头部的序号，客户端将只需要重传丢失的这个小包即可，避免了大量的无意义的重传；将传输方式改为TCP传输后，带宽利用率果然一下就上去了，这里我们的结论是远途传输大文件或大数据包时，TCP的性能由于UDP，这和课本上讲的很不一样。很多知识都不是一成不变的，会根据落地情况而调整、而改变，更有可能进化成不同形态。我想起前几天在火车上看到的一篇文章，城市里的灯光将会吸引虫子，趋光的虫子绕着灯泡一圈圈转，最后力竭饿死，这是个老知识了；而科学家经过实验，从城市和郊区抓取同样数量的飞虫，放在一个房间里观察，发现郊区的飞虫全部围绕着灯泡，而城市中的飞虫则有一小部分对灯光不感兴趣。科学家做出的结论是，城市中的飞虫有一部分进化出了不那么趋光的特性，基因得以保留。所以，我们看到，知识不是一成不变的，尽量做到不先入为主，从实际情况出发来分析问题。&lt;/p&gt;
@@ -1208,10 +1208,10 @@ futex(0x7f99372d3004, FUTEX_WAIT, 0, NULL) = -1 EAGAIN (Resource temporarily una
     
     <item>
       <title>C&#43;&#43;基础知识学习</title>
-      <link>https://bg2bkk.github.io/post/cpp_basis/</link>
+      <link>https://MarsDoge.github.io/post/cpp_basis/</link>
       <pubDate>Tue, 23 Aug 2016 19:52:25 +0800</pubDate>
       
-      <guid>https://bg2bkk.github.io/post/cpp_basis/</guid>
+      <guid>https://MarsDoge.github.io/post/cpp_basis/</guid>
       <description>
 
 &lt;h2 id=&#34;lamba学习&#34;&gt;lamba学习&lt;/h2&gt;
@@ -1342,10 +1342,10 @@ String obj(other);
     
     <item>
       <title>redis过期清除机制及应用方法</title>
-      <link>https://bg2bkk.github.io/post/redis%E8%BF%87%E6%9C%9F%E6%B8%85%E9%99%A4%E6%9C%BA%E5%88%B6%E5%8F%8A%E5%BA%94%E7%94%A8%E6%96%B9%E6%B3%95/</link>
+      <link>https://MarsDoge.github.io/post/redis%E8%BF%87%E6%9C%9F%E6%B8%85%E9%99%A4%E6%9C%BA%E5%88%B6%E5%8F%8A%E5%BA%94%E7%94%A8%E6%96%B9%E6%B3%95/</link>
       <pubDate>Mon, 01 Aug 2016 13:26:07 +0800</pubDate>
       
-      <guid>https://bg2bkk.github.io/post/redis%E8%BF%87%E6%9C%9F%E6%B8%85%E9%99%A4%E6%9C%BA%E5%88%B6%E5%8F%8A%E5%BA%94%E7%94%A8%E6%96%B9%E6%B3%95/</guid>
+      <guid>https://MarsDoge.github.io/post/redis%E8%BF%87%E6%9C%9F%E6%B8%85%E9%99%A4%E6%9C%BA%E5%88%B6%E5%8F%8A%E5%BA%94%E7%94%A8%E6%96%B9%E6%B3%95/</guid>
       <description>
 
 &lt;h2 id=&#34;redis过期清除和淘汰机制&#34;&gt;redis过期清除和淘汰机制&lt;/h2&gt;
@@ -1418,10 +1418,10 @@ String obj(other);
     
     <item>
       <title>effective tips in daily work</title>
-      <link>https://bg2bkk.github.io/post/effective%20tips%20in%20daily%20work/</link>
+      <link>https://MarsDoge.github.io/post/effective%20tips%20in%20daily%20work/</link>
       <pubDate>Sun, 24 Jul 2016 16:36:33 +0800</pubDate>
       
-      <guid>https://bg2bkk.github.io/post/effective%20tips%20in%20daily%20work/</guid>
+      <guid>https://MarsDoge.github.io/post/effective%20tips%20in%20daily%20work/</guid>
       <description>
 
 &lt;h2 id=&#34;ubuntu命令行连接wifi&#34;&gt;ubuntu命令行连接wifi&lt;/h2&gt;
@@ -2574,13 +2574,13 @@ python --version
 &lt;/ul&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;commit 2279c3f4a8a42e696a0f34e6e9b6289487da92c1
-Author: bg2bkk &amp;lt;bg2bkk@gmail.com&amp;gt;
+Author: MarsDoge &amp;lt;MarsDoge@gmail.com&amp;gt;
 Date:   Sun Mar 13 09:12:26 2016 +0800
 
     add SO_REUSEADDR和SO_REUSEPORT.md
 
 commit 2b9d85f8427c5ca9e4f9c128c22acd280eb94405
-Author: bg2bkk &amp;lt;bg2bkk@gmail.com&amp;gt;
+Author: MarsDoge &amp;lt;MarsDoge@gmail.com&amp;gt;
 Date:   Sat Mar 12 01:16:00 2016 +0800
 
     add 采用二级指针实现单链表操作 单链表翻转 删除单链表结点
@@ -2648,10 +2648,10 @@ tcpdump -ni any port 9001 and &#39;tcp[13] &amp;amp; 4 != 0 &#39; -s0  -w rst.ca
     
     <item>
       <title>ble_nrf51822_dfu_空中升级</title>
-      <link>https://bg2bkk.github.io/post/ble_nrf51822_dfu_%E7%A9%BA%E4%B8%AD%E5%8D%87%E7%BA%A7/</link>
+      <link>https://MarsDoge.github.io/post/ble_nrf51822_dfu_%E7%A9%BA%E4%B8%AD%E5%8D%87%E7%BA%A7/</link>
       <pubDate>Wed, 20 Jul 2016 15:31:44 +0800</pubDate>
       
-      <guid>https://bg2bkk.github.io/post/ble_nrf51822_dfu_%E7%A9%BA%E4%B8%AD%E5%8D%87%E7%BA%A7/</guid>
+      <guid>https://MarsDoge.github.io/post/ble_nrf51822_dfu_%E7%A9%BA%E4%B8%AD%E5%8D%87%E7%BA%A7/</guid>
       <description>&lt;p&gt;nrf51822的dfu与别的芯片的空中升级几乎没有差别，以ESP8266为例，本次启动是从启动点bank0启动，空中升级的过程是，从远程网络服务器获取固件并写在bank1中，校验成功后设置下次启动点为bank1，重启后升级成功；nrf51822有点不同的是，空中升级通过ble获取固件并写入flash的bank1后，校验成功会擦除bank0，将bank1内容复制到bank0中，然后重启。&lt;/p&gt;
 
 &lt;p&gt;我的芯片是nrf51822 QFAA，16KB Ram，256KB Flash，使用SDK10。nrf51822启动时，bootloader检查是否进入dfu流程中。bootloader采用 SDK_10_PATH/examples/dfu/bootloader/pca10028/dual_bank_ble_s110，该例程启动时读取button4状态，如果被按下，说明需要进入dfu状态，在讯连的板子上没有button4，所以改用button0。&lt;/p&gt;
@@ -2669,7 +2669,7 @@ tcpdump -ni any port 9001 and &#39;tcp[13] &amp;amp; 4 != 0 &#39; -s0  -w rst.ca
 &lt;li&gt;softdevice: SDK_10_PATH/components/softdevice/s110/hex/s110_nrf51_8.0.0_softdevice.hex&lt;/li&gt;
 &lt;li&gt;bootloader: SDK_10_PATH/examples/dfu/bootloader/pca10028/dual_bank_ble_s110&lt;/li&gt;
 &lt;li&gt;ble application: SDK_10_PATH/examples/ble_peripheral/ble_app_uart&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/NordicSemiconductor/Android-nRF-Connect&#34;&gt;nrf-Connect&lt;/a&gt;，主要使用hex2bin.exe和&lt;a href=&#34;https://raw.githubusercontent.com/BG2BKK/githubio/master/static/How%20to%20generate%20the%20INIT%20file%20for%20DFU.pdf&#34;&gt;怎样制作DFU初始化包&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/NordicSemiconductor/Android-nRF-Connect&#34;&gt;nrf-Connect&lt;/a&gt;，主要使用hex2bin.exe和&lt;a href=&#34;https://raw.githubusercontent.com/MarsDoge/githubio/master/static/How%20to%20generate%20the%20INIT%20file%20for%20DFU.pdf&#34;&gt;怎样制作DFU初始化包&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Keil MDK4/5&lt;/li&gt;
 &lt;li&gt;Master Control Panel，采用最新版3.10.0.14
 
@@ -2970,7 +2970,7 @@ flash_softdevice:
 
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;nrfutil dfu genpkg --application _build/nrf51422_xxac_s130.hex --application-version 0xffffffff --dev-revision 0xffff --dev-type 0xffff --sd-req 0xfffe _build/nrf51422_xxac_s130.zip&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;注意观察&lt;code&gt;--sd-req 0xfff3&lt;/code&gt;，在&lt;a href=&#34;https://raw.githubusercontent.com/BG2BKK/githubio/master/static/How%20to%20generate%20the%20INIT%20file%20for%20DFU.pdf&#34;&gt;文档How to generate the INIT file for DFU.pdf&lt;/a&gt;中讲到softdevice版本对应的0x5A代表SD 7.1.0,0x4F代表 SD 7.0.0，0x64代表SD 8.0.0，而SDK10中的SD正是8.0.0，但是我怎么试都不好使，只能使用0xFFFE，它可以接受任何版本的softdevice&lt;/li&gt;
+&lt;li&gt;注意观察&lt;code&gt;--sd-req 0xfff3&lt;/code&gt;，在&lt;a href=&#34;https://raw.githubusercontent.com/MarsDoge/githubio/master/static/How%20to%20generate%20the%20INIT%20file%20for%20DFU.pdf&#34;&gt;文档How to generate the INIT file for DFU.pdf&lt;/a&gt;中讲到softdevice版本对应的0x5A代表SD 7.1.0,0x4F代表 SD 7.0.0，0x64代表SD 8.0.0，而SDK10中的SD正是8.0.0，但是我怎么试都不好使，只能使用0xFFFE，它可以接受任何版本的softdevice&lt;/li&gt;
 &lt;li&gt;注意观察&lt;code&gt;--application _build/nrf51422_xxac_s130.hex&lt;/code&gt;，application采用的是hex文件&lt;/li&gt;
 &lt;li&gt;可能是nrfutil版本和SDK版本较老的原因吧，很多参数都很不正规，比如application-version，采用的全是FF&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
@@ -3011,10 +3011,10 @@ flash_softdevice:
     
     <item>
       <title>BLE 和 NRF51822 开发</title>
-      <link>https://bg2bkk.github.io/post/ble_nrf51822/</link>
+      <link>https://MarsDoge.github.io/post/ble_nrf51822/</link>
       <pubDate>Fri, 15 Jul 2016 03:12:18 +0800</pubDate>
       
-      <guid>https://bg2bkk.github.io/post/ble_nrf51822/</guid>
+      <guid>https://MarsDoge.github.io/post/ble_nrf51822/</guid>
       <description>&lt;ul&gt;
 &lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://developer.nordicsemi.com/nRF51_SDK/doc/&#34;&gt;nrf51822 sdk document&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 
@@ -3192,7 +3192,7 @@ main() {
 
 &lt;ul&gt;
 &lt;li&gt;选对管脚
-&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;https://raw.githubusercontent.com/BG2BKK/githubio/master/static/nrf51822_adc_pin.png&#34; &gt;&lt;p&gt;nrf51822 adc的通道和输入管脚的对应&lt;/p&gt;&lt;/div&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;https://raw.githubusercontent.com/MarsDoge/githubio/master/static/nrf51822_adc_pin.png&#34; &gt;&lt;p&gt;nrf51822 adc的通道和输入管脚的对应&lt;/p&gt;&lt;/div&gt;
 
 &lt;ul&gt;
 &lt;li&gt;P0.01到P0.06分别对应通道2至通道7，P0.26和P0.27对应通道0和通道1&lt;/li&gt;
@@ -3263,7 +3263,7 @@ main() {
 &lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;https://raw.githubusercontent.com/BG2BKK/githubio/master/static/nrf51822_adc_config.png&#34; &gt;&lt;p&gt;nrf51822 adc的配置寄存器&lt;/p&gt;&lt;/div&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;https://raw.githubusercontent.com/MarsDoge/githubio/master/static/nrf51822_adc_config.png&#34; &gt;&lt;p&gt;nrf51822 adc的配置寄存器&lt;/p&gt;&lt;/div&gt;
 
 &lt;ul&gt;
 &lt;li&gt;疑难杂症
@@ -3308,7 +3308,7 @@ main() {
 &lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://devzone.nordicsemi.com/documentation/nrf51/4.4.1/html/group__bootloader__dfu__description.html&#34;&gt;dfu&lt;/a&gt;&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;如何根据官方例程进行DFU升级，可以参考我的&lt;a href=&#34;https://bg2bkk.github.io/post/ble_nrf51822_dfu_%E7%A9%BA%E4%B8%AD%E5%8D%87%E7%BA%A7/&#34;&gt;博客 nrf51822 dfu 升级&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;如何根据官方例程进行DFU升级，可以参考我的&lt;a href=&#34;https://MarsDoge.github.io/post/ble_nrf51822_dfu_%E7%A9%BA%E4%B8%AD%E5%8D%87%E7%BA%A7/&#34;&gt;博客 nrf51822 dfu 升级&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://devzone.nordicsemi.com/tutorials/&#34;&gt;nordic tutorials of bluetooth low energy&lt;/a&gt;&lt;/p&gt;
@@ -3446,10 +3446,10 @@ main() {
     
     <item>
       <title>stm32_eclipse_openocd_stlink</title>
-      <link>https://bg2bkk.github.io/post/stm32_eclipse_openocd_stlink/</link>
+      <link>https://MarsDoge.github.io/post/stm32_eclipse_openocd_stlink/</link>
       <pubDate>Wed, 06 Jul 2016 12:51:05 +0800</pubDate>
       
-      <guid>https://bg2bkk.github.io/post/stm32_eclipse_openocd_stlink/</guid>
+      <guid>https://MarsDoge.github.io/post/stm32_eclipse_openocd_stlink/</guid>
       <description>&lt;ul&gt;
 &lt;li&gt;&lt;p&gt;eclipse下载&lt;/p&gt;
 
@@ -3572,10 +3572,10 @@ st-flash --reset write elua_lua_stm32f4discovery.bin 0x8000000
     
     <item>
       <title>insertionSortList_链表插入排序</title>
-      <link>https://bg2bkk.github.io/post/insertionSortList_%E9%93%BE%E8%A1%A8%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/</link>
+      <link>https://MarsDoge.github.io/post/insertionSortList_%E9%93%BE%E8%A1%A8%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/</link>
       <pubDate>Sun, 05 Jun 2016 22:27:39 +0800</pubDate>
       
-      <guid>https://bg2bkk.github.io/post/insertionSortList_%E9%93%BE%E8%A1%A8%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/</guid>
+      <guid>https://MarsDoge.github.io/post/insertionSortList_%E9%93%BE%E8%A1%A8%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/</guid>
       <description>&lt;p&gt;写go并发代码有点疲劳，那就A个题吧。我觉得LintCode上的题目都很不错，有难有易，循序渐进的，随手选一道题来做吧。&lt;/p&gt;
 
 &lt;p&gt;选择了&lt;a href=&#34;http://www.lintcode.com/zh-cn/problem/insertion-sort-list/&#34;&gt;链表插入排序&lt;/a&gt;，写起来不那么容易，但是也有调试的快感，其实对于难题，我们需要做到的是心思缜密、抽丝剥茧一步步实现；对于中等题目，我们需要抓住本质，一击制敌；在编码过程中，心里有时刻有代码执行时间复杂度和空间占用的底，逐渐养成这个习惯；编码过程中同样重要的还有编码风格，如果能够简洁明了的表达程序逻辑，就追求简洁，如果变量较多，需要在变量命名的时候注意甄别，对于写出的代码，尽量追求逻辑清晰风格良好，这是一个程序员的基本素质。&lt;/p&gt;
@@ -3586,7 +3586,7 @@ st-flash --reset write elua_lua_stm32f4discovery.bin 0x8000000
 
 &lt;p&gt;思路：插入排序的特点是，待排序的节点前面所有节点都是已排序的，同时记录已排序部分的末尾，也就是待排序节点的prev节点，所以每次拿带排序节点依次从头比较，直到比较到自己头上；在比较过程中，如果没有合适的位置，最终比较到自己头上，说明待排序节点可以直接补在已排序节点的后面；如果有合适的位置，就直接break，然后待排序节点从链表取出，prev节点的next指向待排序节点的next，保存当前break处的节点，待排序节点占据该节点位置，并将待排序节点的next指向break处节点，完成插入。&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;https://github.com/BG2BKK/daily-programming/blob/master/cpp/insertionSortList.cpp&#34;&gt;完整代码地址&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/MarsDoge/daily-programming/blob/master/cpp/insertionSortList.cpp&#34;&gt;完整代码地址&lt;/a&gt;&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;codelist&lt;/li&gt;
@@ -3641,10 +3641,10 @@ class Solution {
     
     <item>
       <title>一道多线程面试题</title>
-      <link>https://bg2bkk.github.io/post/%E4%B8%80%E9%81%93%E5%A4%9A%E7%BA%BF%E7%A8%8B%E9%9D%A2%E8%AF%95%E9%A2%98/</link>
+      <link>https://MarsDoge.github.io/post/%E4%B8%80%E9%81%93%E5%A4%9A%E7%BA%BF%E7%A8%8B%E9%9D%A2%E8%AF%95%E9%A2%98/</link>
       <pubDate>Thu, 26 May 2016 01:39:59 +0800</pubDate>
       
-      <guid>https://bg2bkk.github.io/post/%E4%B8%80%E9%81%93%E5%A4%9A%E7%BA%BF%E7%A8%8B%E9%9D%A2%E8%AF%95%E9%A2%98/</guid>
+      <guid>https://MarsDoge.github.io/post/%E4%B8%80%E9%81%93%E5%A4%9A%E7%BA%BF%E7%A8%8B%E9%9D%A2%E8%AF%95%E9%A2%98/</guid>
       <description>
 
 &lt;p&gt;最近突然看协程和并发编程比较多，遇到这样&lt;a href=&#34;http://blog.csdn.net/liuxuejiang158blog/article/details/21977009&#34;&gt;一道题&lt;/a&gt;&lt;/p&gt;
@@ -4039,10 +4039,10 @@ func main() {
     
     <item>
       <title>SO_REUSEADDR和SO_REUSEPORT</title>
-      <link>https://bg2bkk.github.io/post/SO_REUSEADDR%E5%92%8CSO_REUSEPORT/</link>
+      <link>https://MarsDoge.github.io/post/SO_REUSEADDR%E5%92%8CSO_REUSEPORT/</link>
       <pubDate>Mon, 09 May 2016 16:55:42 +0800</pubDate>
       
-      <guid>https://bg2bkk.github.io/post/SO_REUSEADDR%E5%92%8CSO_REUSEPORT/</guid>
+      <guid>https://MarsDoge.github.io/post/SO_REUSEADDR%E5%92%8CSO_REUSEPORT/</guid>
       <description>
 
 &lt;h2 id=&#34;结论&#34;&gt;结论&lt;/h2&gt;
@@ -4188,10 +4188,10 @@ data
     
     <item>
       <title>tcp_fast_open的概念 作用以及实现</title>
-      <link>https://bg2bkk.github.io/post/tcp_fast_open%E7%9A%84%E6%A6%82%E5%BF%B5%20%E4%BD%9C%E7%94%A8%E4%BB%A5%E5%8F%8A%E5%AE%9E%E7%8E%B0/</link>
+      <link>https://MarsDoge.github.io/post/tcp_fast_open%E7%9A%84%E6%A6%82%E5%BF%B5%20%E4%BD%9C%E7%94%A8%E4%BB%A5%E5%8F%8A%E5%AE%9E%E7%8E%B0/</link>
       <pubDate>Mon, 09 May 2016 15:53:34 +0800</pubDate>
       
-      <guid>https://bg2bkk.github.io/post/tcp_fast_open%E7%9A%84%E6%A6%82%E5%BF%B5%20%E4%BD%9C%E7%94%A8%E4%BB%A5%E5%8F%8A%E5%AE%9E%E7%8E%B0/</guid>
+      <guid>https://MarsDoge.github.io/post/tcp_fast_open%E7%9A%84%E6%A6%82%E5%BF%B5%20%E4%BD%9C%E7%94%A8%E4%BB%A5%E5%8F%8A%E5%AE%9E%E7%8E%B0/</guid>
       <description>
 
 &lt;h2 id=&#34;引言&#34;&gt;引言&lt;/h2&gt;
@@ -4531,10 +4531,10 @@ net.ipv4.tcp_fastopen = 3
     
     <item>
       <title>effective tips in daily learning</title>
-      <link>https://bg2bkk.github.io/post/effective%20tips%20in%20daily%20learning/</link>
+      <link>https://MarsDoge.github.io/post/effective%20tips%20in%20daily%20learning/</link>
       <pubDate>Fri, 06 May 2016 11:39:48 +0800</pubDate>
       
-      <guid>https://bg2bkk.github.io/post/effective%20tips%20in%20daily%20learning/</guid>
+      <guid>https://MarsDoge.github.io/post/effective%20tips%20in%20daily%20learning/</guid>
       <description>
 
 &lt;h2 id=&#34;c语言中的宏&#34;&gt;C语言中的宏&lt;/h2&gt;
